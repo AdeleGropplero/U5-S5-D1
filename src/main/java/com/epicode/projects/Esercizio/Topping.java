@@ -1,0 +1,14 @@
+package com.epicode.projects.Esercizio;
+import lombok.*;
+
+@NoArgsConstructor
+@Getter
+@Setter
+public class Topping extends Alimento{
+    private String nome;
+
+    public Topping( String nome, int calorie, double prezzo) {
+        super(calorie, prezzo);
+        this.nome = nome;
+    }
+}
