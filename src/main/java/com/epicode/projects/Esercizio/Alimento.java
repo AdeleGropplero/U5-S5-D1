@@ -6,9 +6,23 @@ import lombok.*;
 @AllArgsConstructor
 @Getter
 @Setter
-public abstract class Alimento {
+public class Alimento {
     private int calorie;
     private double prezzo;
+
+    public Alimento(int calorie, double prezzo) {
+        this.calorie = calorie;
+        this.prezzo = prezzo;
+    }
+
+    public int getCalorie() {
+        return calorie;
+    }
+
+    // Getter per il prezzo
+    public double getPrezzo() {
+        return prezzo;
+    }
 
     @Override
     public String toString() {

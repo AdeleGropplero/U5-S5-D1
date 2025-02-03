@@ -19,9 +19,9 @@ public class Pizza extends Alimento{
 
     @Override
     public String toString() {
-        return "Pizza{" +
-                "name='" + name + '\'' +
-                ", toppings=" + toppings +
-                "} " + super.toString();
+        return "Pizza " +
+                "name='" + name + '(' +
+                "toppings=" + toppings +
+                ") " + super.toString();
     }
 }

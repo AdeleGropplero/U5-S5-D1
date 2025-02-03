@@ -1,17 +1,15 @@
 package com.epicode.projects.Esercizio;
+
 import lombok.*;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 public class Drink extends Alimento {
-    private String bevanda;
+    private String nome;
 
-    @Override
-    public String toString() {
-        return "Drink{" +
-                "bevanda='" + bevanda + '\'' +
-                "} " + super.toString();
+    public Drink(String nome, int calorie, double prezzo) {
+        super(calorie, prezzo);
+        this.nome = nome;
     }
 }
