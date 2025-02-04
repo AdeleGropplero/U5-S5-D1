@@ -23,9 +23,9 @@ public class Alimento {
 
     @Override
     public String toString() {
-        return "Alimento: \n" +
-                "calorie=" + calorie + "kCal \n" +
-                ", prezzo=" + prezzo + "€ \n"
+        return
+                " | " + calorie + " kCal |" +
+                " " + prezzo + " € "
                 ;
     }
 }

@@ -12,4 +12,8 @@ public class Topping extends Alimento{
         this.nome = nome;
     }
 
+    @Override
+    public String toString() {
+        return nome + super.toString();
+    }
 }

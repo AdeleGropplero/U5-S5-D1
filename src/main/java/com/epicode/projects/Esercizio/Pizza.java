@@ -19,9 +19,12 @@ public class Pizza extends Alimento{
 
     @Override
     public String toString() {
-        return "Pizza " +
-                "name='" + name + '(' +
-                "toppings=" + toppings +
+        return "Pizza: " + name +
+                "(" + toppings.stream()
+                .map(t -> t.getNome())
+                .reduce((t1, t2) -> t1 + ", " + t2)
+                .orElse("Nessuno") +
                 ") " + super.toString();
     }
+
 }

@@ -21,7 +21,7 @@ public class Menu {
 
     public void stampaMenu() {
         System.out.println("\n--- Pizze ---");
-        pizze.forEach(p -> System.out.println(p.toString() + " | " + p.getCalorie() + " Kcal | €" + p.getPrezzo()));
+        pizze.forEach(p -> System.out.println(p.toString()));
 
         System.out.println("\n--- Toppings ---");
         toppings.forEach(t -> System.out.println(t.getNome() + " | " + t.getCalorie() + " Kcal | €" + t.getPrezzo()));
