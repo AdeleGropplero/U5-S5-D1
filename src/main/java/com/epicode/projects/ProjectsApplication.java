@@ -20,7 +20,7 @@ public class ProjectsApplication {
 	public static void configMenu(){
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(ConfigurationBean.class);
 		Menu menu = (Menu) ctx.getBean("menu");
-		System.out.println(menu);
+		menu.stampaMenu();
 		ctx.close();
 	}
 

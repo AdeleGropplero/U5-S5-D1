@@ -1,7 +1,13 @@
 package com.epicode.projects.Esercizio;
 
-import java.util.List;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.util.List;
+@NoArgsConstructor
+@Getter
+@Setter
 public class Menu {
     private List<Pizza> pizze;
     private List<Topping> toppings;
