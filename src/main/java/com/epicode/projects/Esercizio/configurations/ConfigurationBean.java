@@ -1,5 +1,11 @@
-package com.epicode.projects.Esercizio;
+package com.epicode.projects.Esercizio.configurations;
 
+import com.epicode.projects.Esercizio.D2.Ordine;
+import com.epicode.projects.Esercizio.D2.Tavolo;
+import com.epicode.projects.Esercizio.Drink;
+import com.epicode.projects.Esercizio.Menu;
+import com.epicode.projects.Esercizio.Pizza;
+import com.epicode.projects.Esercizio.Topping;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -42,17 +48,17 @@ public class ConfigurationBean {
     //-------------------------------------------------------------------------------
     @Bean
     public Drink lemonade() {
-        return new Drink("Lemonade (0.33l)", 128, 1.29);
+        return new Drink("Limonata (0.33l)", 128, 1.29);
     }
 
     @Bean
     public Drink water() {
-        return new Drink("Water (0.5l)", 0, 1.29);
+        return new Drink("Acqua (0.5l)", 0, 1.29);
     }
 
     @Bean
     public Drink wine() {
-        return new Drink("Wine (0.75l, 13%)", 607, 7.49);
+        return new Drink("Vino (0.75l, 13%)", 607, 7.49);
     }
     //-------------------------------------------------------------------------------
 
@@ -79,6 +85,41 @@ public class ConfigurationBean {
                         List.of(lemonade(),water(),wine())
                        );
     }
+
+    //-------------------------------------------------------------------------------
+    //-------------------------DAY 2-------------------------------------------------
+
+    @Bean("tavolo1")
+    @Scope("prototype")
+    public Tavolo getTavolo1(){
+        return new Tavolo(1, 4, true);
+    }
+
+    @Bean("tavolo2")
+    @Scope("prototype")
+    public Tavolo getTavolo2(){
+        return new Tavolo(2, 6, true);
+    }
+
+    @Bean("tavolo3")
+    @Scope("prototype")
+    public Tavolo getTavolo3(){
+        return new Tavolo(2, 3, true);
+    }
+
+    @Bean("ordine1")
+    @Scope("prototype")
+    public Ordine getOrdine1(){
+        Ordine o = new Ordine(3, getTavolo1());
+        o.aggiungiProdotti(margherita());
+        o.aggiungiProdotti(margherita());
+        o.aggiungiProdotti(salamona());
+        o.aggiungiProdotti(lemonade());
+        o.aggiungiProdotti(lemonade());
+        o.aggiungiProdotti(water());
+        return o;
+    }
+
 
 
 }
